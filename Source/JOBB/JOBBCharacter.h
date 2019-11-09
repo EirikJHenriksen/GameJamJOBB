@@ -76,6 +76,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
 	class UAnimMontage* FireAnimation;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
+	bool isPointing{false};
+
 	/** Whether to use motion controller location for aiming. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
 	uint32 bUsingMotionControllers : 1;
@@ -84,6 +87,8 @@ protected:
 	
 	/** Fires a projectile. */
 	void OnFire();
+
+	void ThePoint();
 
 	/** Resets HMD orientation and position in VR. */
 	void OnResetVR();
